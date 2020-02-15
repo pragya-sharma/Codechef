@@ -1,25 +1,29 @@
 /*
-  pragya is a good girl.  input
-  sudjbd  lv d jrrg jluo.  output
- */
+SHE IS A GOOD GIRL. << input
+VKH LV D JRRG JLUO.  << output
+*/
+
 import java.util.*;
-public class Jaaadu {
+
+class Jaadu {
     public static void main(String[] args) {
-        char newchar=' ';
         Scanner scanner = new Scanner(System.in);
         String str1 = scanner.nextLine();
-        String str2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        char[] ch = str1.toCharArray();
-        for(int i=0;i<ch.length;i++){
-            String var =  new String("ch[i]");
-            if(str2.contains(var)) {
-                int index = str2.indexOf(ch[i]);
-                int value = index + 3;
-                 newchar = str2.charAt(value);
-            }
+        str1 = str1.toUpperCase();
 
-                System.out.print(newchar);
-
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) >= 'A' && str1.charAt(i) <= 'W') {
+                System.out.print((char) ((int) (str1.charAt(i)) + 3));
+            } else if (str1.charAt(i) >= 'X' && str1.charAt(i) <= 'Z') {
+                if (str1.charAt(i) == 'X')
+                    System.out.print("A");
+                else if (str1.charAt(i) == 'Y')
+                    System.out.print("B");
+                else if (str1.charAt(i) == 'Z')
+                    System.out.println("C");
+            } else if (str1.charAt(i) == ' ')
+                System.out.print(" ");
+            else System.out.print(str1.charAt(i));
         }
 
     }
